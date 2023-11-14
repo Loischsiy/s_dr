@@ -12,6 +12,7 @@
       <p>Поздравляем тебя с Днём Рождения! Желаю тебе огромного счастья, крепкого здоровья и чтобы ты стал настоящим "Sexyal Boys". Начни ходить в Gym и добейся телосложения настоящего Gym Bro!</p>
       <p>Пусть этот год будет наполнен новыми достижениями, уверенностью и невероятной энергией!</p>
       <p>С любовью, Димон</p>
+      <button id="playButton">Включить звук</button>
     </div>
     <img src="sasha.jpg" alt="Фотография именинника" class="profile-pic">
   </div>
@@ -22,8 +23,33 @@
   </audio>
 
   <script>
+    // Получаем ссылки на элементы
     const audio = document.getElementById('backgroundMusic');
-    audio.volume = 1; // Установите громкость по вашему желанию (от 0 до 1)
+    const playButton = document.getElementById('playButton');
+
+    // Устанавливаем громкость
+    audio.volume = 0.2; // Установите громкость по вашему желанию (от 0 до 1)
+
+    // Функция для включения/выключения звука
+    function toggleSound() {
+      if (audio.paused) {
+        audio.play(); // Воспроизвести звук
+        playButton.textContent = 'Выключить звук';
+      } else {
+        audio.pause(); // Поставить на паузу
+        playButton.textContent = 'Включить звук';
+      }
+    }
+
+    // Обработчик нажатия на кнопку
+    playButton.addEventListener('click', toggleSound);
+
+    // Отменяем автовоспроизведение и включаем звук по клику
+    document.addEventListener('click', function enableSound() {
+      audio.play();
+      playButton.textContent = 'Выключить звук';
+      document.removeEventListener('click', enableSound); // Отменяем обработчик события
+    });
   </script>
 </body>
 </html>
