@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>С днем рождения!</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>С ДР АЛЕКСАНДР</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>С днем рождения!</h1>
-    <p>Желаю тебе всего самого наилучшего!</p>
-  </header>
-  <main>
-    <img src="cake.jpg" alt="Торт">
-    <p>Пусть этот день будет наполнен радостью и счастьем!</p>
-    <p>Пусть все твои мечты исполнятся!</p>
-  </main>
-  <footer>
-    <p>С любовью, Bard</p>
-  </footer>
+  <div class="background">
+    <div class="content">
+      <h1>С Днём Рождения!</h1>
+      <p>Поздравляем тебя с Днём Рождения! Желаю тебе огромного счастья, крепкого здоровья и чтобы ты стал настоящим "Sexyal Boys". Начни ходить в Gym и добейся телосложения настоящего Gym Bro!</p>
+      <p>Пусть этот год будет наполнен новыми достижениями, уверенностью и невероятной энергией!</p>
+      <p>С любовью, Димон</p>
+    </div>
+    <img src="sasha.jpg" alt="Фотография именинника" class="profile-pic">
+  </div>
+  <!-- Аудиоэлемент для воспроизведения музыки -->
+  <audio id="backgroundMusic" autoplay loop>
+    <source src="happy_birdsday.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудиоэлемент.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('backgroundMusic');
+    audio.volume = 0.8; // Установите громкость по вашему желанию (от 0 до 1)
+  </script>
 </body>
 </html>

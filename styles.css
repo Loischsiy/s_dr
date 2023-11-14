@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background .content {
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+}
+
+.background .content h1 {
+  font-size: 3em; /* Увеличиваем размер заголовка */
+  margin-bottom: 20px; /* Увеличиваем отступ снизу */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Добавляем тень тексту */
+}
+
+.background .content p {
+  line-height: 1.8; /* Увеличиваем межстрочный интервал */
+  font-size: 1.2em; /* Увеличиваем размер текста */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Добавляем тень тексту */
+}
+
+.profile-pic {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0.7;
+  border: 5px solid #fff; /* Добавляем рамку */
+  animation: rotatePic 15s infinite linear, animateFilter 10s infinite linear; /* Анимация фона */
+}
+
+@keyframes rotatePic {
+  0% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+@keyframes animateFilter {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #ffcc00, #ff6666); /* Градиентный фон */
+  opacity: 0.5; /* Прозрачность фона */
+  z-index: -1;
+  animation: animateGradient 10s ease-in-out infinite alternate; /* Анимация фона */
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
