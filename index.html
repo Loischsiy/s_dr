@@ -22,23 +22,8 @@
   </audio>
 
   <script>
-    // Получаем ссылки на элементы
     const audio = document.getElementById('backgroundMusic');
-    const playButton = document.getElementById('playButton');
-
-    // Устанавливаем громкость
     audio.volume = 1; // Установите громкость по вашему желанию (от 0 до 1)
-
-    // Обработчик нажатия на кнопку
-    playButton.addEventListener('click', function() {
-      if (audio.paused) {
-        audio.play(); // Воспроизвести звук
-        playButton.textContent = 'Выключить звук';
-      } else {
-        audio.pause(); // Поставить на паузу
-        playButton.textContent = 'Включить звук';
-      }
-    });
   </script>
 </body>
 </html>
